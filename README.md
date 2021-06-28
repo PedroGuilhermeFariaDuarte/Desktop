@@ -1,6 +1,6 @@
 <p align="center">
   <p align="center">
-    <img src="./images/home-1.jpeg" alt="The home screenshot" height="550"/>
+    <img src="./images/home-1.jpeg" alt="The home screenshot" height="570"/>
   </p>
   <p align="center">
     <i>The home page of application</i>
@@ -12,8 +12,8 @@
 Hello, this is an application created in my [Twicth lives](https://www.twitch.tv/onedev_), this is based on new Windows 11, a operational system, was created with React and some effects was create with pure **CSS**.
 
 <p align="left">
-  <img src="./images/home-4.jpg" alt="User clicked in logo of Windows in home" height="492"/>
-  <img src="./images/home-2.jpeg" alt="The menu is showed" height="492"/>
+  <img src="./images/home-4.jpg" alt="User clicked in logo of Windows in home" height="270"/>
+  <img src="./images/home-2.jpeg" alt="The menu is showed" height="270"/>
 </p>
 
 The logo of new Windows 11 was recreated with pure css, see below
