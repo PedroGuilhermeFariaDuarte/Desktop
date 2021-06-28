@@ -12,8 +12,8 @@
 Hello, this is an application created in my [Twicth lives](https://www.twitch.tv/onedev_), this is based on new Windows 11, a operational system, was created with React and some effects was create with pure **CSS**.
 
 <p align="left">
-  <img src="./images/home-4.jpg" alt="User clicked in logo of Windows in home" height="270"/>
-  <img src="./images/home-2.jpeg" alt="The menu is showed" height="270"/>
+  <img src="./images/home-4.jpg" alt="User clicked in logo of Windows in home" style="max-width:100%"/>
+  <img src="./images/home-2.jpeg" alt="The menu is showed" style="max-width:100%"/>
 </p>
 
 The logo of new Windows 11 was recreated with pure css, see below
