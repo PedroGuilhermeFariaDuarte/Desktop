@@ -1,6 +1,6 @@
 <p align="center">
   <p align="center">
-    <img src="./images/home-1.jpeg" alt="The home screenshot" height="570"/>
+    <img src="./images/home-1.jpeg" alt="The home screenshot"  style="max-width:100%"/>
   </p>
   <p align="center">
     <i>The home page of application</i>
