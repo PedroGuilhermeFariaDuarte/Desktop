@@ -1,0 +1,116 @@
+:root {
+  /*
+    Background colors
+  */
+  --primary-background-color: #eff6fc;
+  --secondary-background-color: #deecf9;
+  --third-background-color: #c7e0f4;
+  --for-background-color: #00bcf2;
+  --cinco-background-color: #0078d4;
+  --six-background-color: #201f1e;
+
+  /*
+    Background colors with acrylic
+  */
+  --primary-background-acrylic-color: #eff6fc44;
+  --secondary-background-acrylic-color: #deecf990;
+  --third-background-acrylic-color: #c7e0f490;
+  --for-background-acrylic-color: #00bcf290;
+  --cinco-background-acrylic-color: #0078d490;
+  --sixthly-background-acrylic-color: #48464420;
+  --seventh-background-acrylic-color: #201f1e64;
+  --eleventh-background-acrylic-color: #eff6fc23;
+
+  /*
+    Acrylic levels
+  */
+  --primary-acrylic-level: blur(15px);
+  --secondary-acrylic-level: blur(0.7px);
+  --third-acrylic-level: blur(0.8px);
+  --for-acrylic-level: blur(0.9px);
+  --cinco-acrylic-level: blur(1px);
+
+  /*
+    Background gradient acrylic colors
+  */
+  --primary-background--acrylic-gradient: linear-gradient(160deg,#eff6fc 80%,#c7e0f4 10%,#eff6fc 10%);
+  --secondary-background--acrylic-gradient: linear-gradient(160deg,var(--sixthly-background-acrylic-color),var(--sixthly-background-acrylic-color));
+
+
+  /*
+    Border colors
+  */
+  --primary-border-color: #0078d4;
+
+  /*
+    Background gradient colors
+  */
+  --primary-background-gradient: linear-gradient(160deg,#eff6fc,#c7e0f4,#eff6fc);
+  --secondary-background-gradient: linear-gradient(160deg,#00bcf2 27%,#0078d4 90%);
+  --third-background-gradient: linear-gradient(160deg, #00bcf2 5%,#0078d4 80%);
+  --forth-background-gradient: linear-gradient(160deg, #00bcf2 30%,#0078d4 80%);
+  --five-background-gradient: linear-gradient(180deg,#ebe4f8ee 25% ,#f3ecfcfb  98%);
+  --six-background-gradient: linear-gradient(55deg,#4a3d5d97 25%, #75698395 98%);
+
+  /*
+    Background images    
+  */
+  --primary-background-image: url("../../assets/background/background.jpg");
+  --secondary-background-image: url("../../assets/background/background_2.jpg");
+  --third-background-image: url("../../assets/background/background_3.jpg");
+  --fourth-background-image: url("../../assets/background/background_4.jpg");
+  --fiveth-background-image: url("../../assets/background/background_5.jpg");
+  --sixthe-background-image: url("../../assets/background/background_6.jpg");
+
+  /*
+    Box shadows
+  */
+  --primary-shadow: 0em 1.5em 0.8em 20px rgb(0 0 0 / 89%);
+  --secondary-shadow: 0em 0em 0.2em 0.1px rgb(0 0 0 / 25%);
+  --third-shadow: 0em 1.5em 0.6em 15px rgb(0 0 0 / 70%);
+  --fourth-shadow: 0em 1.5em 0.8em 20px rgb(0 0 0 / 50%);
+
+  /*
+    Font Family
+  */
+  --primary-font-family: "Segoe UI Variable Text", sans-serif;
+  --secondary-font-family: "Segoe UI Variable Text Semibold", sans-serif;
+  --third-font-family: "Segoe UI Variable Display", sans-serif;
+
+  /*
+    Font Type size
+  */
+  --primary-title-size: 28px;
+  --primary-subtitle-size: 20px;
+  --secondary-subtitle-size: 25px;
+  --primary-bodyText-size: 20px;
+  --primary-bodyText-size: 20px;
+  --primary-bodyTextSmall-size: 14px;
+  --primary-bodyTextVerySmall-size: 12px;
+  --primary-bodyTextExtraSmall-size: 12px;
+  --primary-bodyTextMedium-size: 16px;
+
+  /*
+    Font colors
+  */
+  --primary-text-color: #201f1e;
+  --secondary-text-color: #393939;
+  --third-text-color: #484644;
+  --fourth-text-color: #f5f5f5;
+  --six-text-color: #59555e;
+
+  /*
+    Spacing and gutters
+  */
+  --primary-padding: 12px;
+  --secondary-padding: 8px;
+  --third-padding: 54px;
+  --for-padding: 35px;
+  --five-padding: 24px;
+  --extra-padding: 95px;
+  --min-padding: 60px;
+  --primary-right-spacing: 12px;
+  --primary-top-spacing: 12px;
+  --primary-bottom-spacing: 12px;
+  --secondary-bottom-spacing: 24px;
+}
