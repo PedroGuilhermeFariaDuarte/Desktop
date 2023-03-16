@@ -2,9 +2,10 @@ import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
  *,*::before, *::after {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     outline: none;
+    border: none;
     box-sizing: border-box;
   }
 

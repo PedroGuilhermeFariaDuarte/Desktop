@@ -12,7 +12,6 @@ import './styles/guide/index.css'
 // Components
 import TaskBar from './components/TaskBar';
 import Menu from './components/Menu';
-import Widgets from './components/Widgets';
 import { Container } from './components/Container';
 
 function App() {
@@ -21,8 +20,7 @@ function App() {
     <GlobalStyle />
     <ContextProvider>
       <Container>
-        <Menu />
-        <Widgets />
+        <Menu />        
       </Container>
       <TaskBar />
     </ContextProvider>

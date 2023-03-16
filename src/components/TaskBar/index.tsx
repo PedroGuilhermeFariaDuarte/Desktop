@@ -7,7 +7,6 @@ import { useHooksContextReducer } from '../../context/reducer/hooks'
 import { actionReducerMenu, actionReducerWidgets } from '../../context/reducer/actions'
 
 // Icons
-import { BiSearch } from 'react-icons/bi'
 import { IoIosArrowUp } from 'react-icons/io'
 import { AiOutlineSound } from 'react-icons/ai'
 import { BsBatteryFull } from 'react-icons/bs'
@@ -16,8 +15,13 @@ import { MdSignalWifi4Bar } from 'react-icons/md'
 // Types
 import { ITaskBar } from './types'
 
+// Components
+import {IconBar, IconContent } from "../../components/IconBar";
+import Widgets from '../Widgets'
+
 // Styles
-import { Container, ActionContent, InfoContent, WindowsLogo, SearchIcon, IconTaskBar, WindowsWidgets } from './styles'
+import { Container, Content, InfoContent } from './styles'
+import { WindowsIcon } from '../WindowIcon'
 
 
 const TaskBar: React.FC<ITaskBar> = () => {
@@ -25,31 +29,16 @@ const TaskBar: React.FC<ITaskBar> = () => {
 
   return (
     <Container>
-      <ActionContent>
-        <IconTaskBar
+      <Widgets />      
+      <Content>
+        <IconBar
           onClick={() => dispatch(actionReducerMenu(!state?.open))}
         >
-          <WindowsLogo>
-            <div className='quad'></div>
-            <div className='quad'></div>
-            <div className='quad'></div>
-            <div className='quad'></div>
-          </WindowsLogo>
-        </IconTaskBar>
-        <IconTaskBar>
-          <SearchIcon>
-            <BiSearch />
-          </SearchIcon>
-        </IconTaskBar>
-        <IconTaskBar>
-          <WindowsWidgets
-            onClick={() => dispatch(actionReducerWidgets(!state?.widgets))}
-          >
-            <div className='bar'></div>
-            <div className='bar'></div>
-          </WindowsWidgets>
-        </IconTaskBar>
-      </ActionContent>
+          <IconContent>
+            <WindowsIcon />
+          </IconContent>
+        </IconBar>        
+      </Content>
       <InfoContent>
         <IoIosArrowUp />
         <AiOutlineSound />
