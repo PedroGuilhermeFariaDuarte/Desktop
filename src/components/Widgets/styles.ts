@@ -11,8 +11,8 @@ export const Aside = styled.aside`
     height: calc((100vh -  2.875rem) - 1.5rem);
     padding: 2.7rem;
     border-radius: 8px;    
-    backdrop-filter: var(--secondary-acrylic-level);
-    background-color: var(--secondary-background-acrylic-color);  
+    /* backdrop-filter: var(--secondary-acrylic-level); */
+    background-color: var(--primary-background-color);  
     
     overflow-y: auto;
 
@@ -35,8 +35,8 @@ export const Aside = styled.aside`
 `
 
 export const AsideHeader = styled.header`
-    width: 100%;
-    background-color: red;
+    width: 100%;    
+    /* background-color: red;     */
 
     display: flex;
     flex-flow: row nowrap;
@@ -44,12 +44,7 @@ export const AsideHeader = styled.header`
     align-items: center;
     gap: 1rem;
 
-    svg {
-        font-size: 1.4rem;
-        fill: var(--cinco-background-color);
-
-        cursor: pointer;
-    }
+   
 
     .wrapper-icons {
         flex: 1;
@@ -59,11 +54,22 @@ export const AsideHeader = styled.header`
         justify-content: flex-start;
         align-items: center;
         gap: 0rem;
+
+        svg{
+            fill: var(--third-text-color);
+            font-size: 1.4rem;
+            cursor: pointer;
+
+            &:first-child  {
+                fill: var(--cinco-background-color);
+            }
+        }
     }
+
     .wrapper-widget-info {
         flex: 1;
         /* max-width: 20%; */
-        background-color: green;        
+        /* background-color: green;         */
 
         display: flex;
         flex-flow: row nowrap;
@@ -75,7 +81,10 @@ export const AsideHeader = styled.header`
         flex: 1;
         max-width: 35%;
         height: 100%;
-        background-color: yellow;
+        border-radius: 8px;
+        background-color: var(--third-background-color);
+        
+
     }
 `
 
@@ -104,18 +113,21 @@ export const AsideCard = styled.div.attrs({
     min-height: 8.5rem;
     height: 18rem;
     max-height: 18rem;
-    
     ${(props) => props.height ? css` height: ${props.height}rem; max-height: ${props.height}rem; ` : ''}
-
-    border-radius: 12px;
-    background-color: blanchedalmond;
+    background-color: var(--third-background-color);
+    border-radius: 12px;        
 
     overflow: hidden;
+    cursor: pointer;
 
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
     align-items: flex-start;
+
+    &:hover {
+        /* box-shadow: -2px 4px 8px 1px rgb(233 248 255 / 27%); */
+    }
 `
 
 export const AsideCardHeader = styled.div`
@@ -123,7 +135,7 @@ export const AsideCardHeader = styled.div`
     width: 100%;
     min-height: 50%;
     max-height: 50%;
-    background-color: chartreuse;    
+    background-color: var(--third-background-color);
 `
 
 export const AsideCardContent = styled.div`
@@ -132,7 +144,7 @@ export const AsideCardContent = styled.div`
     min-height: 50%;
     max-height: 50%;  
     
-    background-color: tomato;
+    background-color: var(--secondary-background-color);
 `
 
 export const AsideCardSeparator = styled.div<IAsideCard>`
@@ -152,11 +164,11 @@ export const AsideCardSeparator = styled.div<IAsideCard>`
     }
 `
 
-export const Container = styled.div`      
+export const Container = styled.div` 
     width: 9rem;
     height: 100%;
     padding: 0.25rem;
-    background-color: pink;
+    /* background-color: pink; */
 
     position: relative;
 

@@ -69,10 +69,10 @@ const Widgets: React.FC<IWidgets> = () => {
         </AsideCard>
         <AsideCardSeparator>
           <AsideCard gridArea='1 / 2 / 1 / 3' height={'9'}>
-            <AsideCardContent></AsideCardContent>
+            {/* <AsideCardContent></AsideCardContent> */}
           </AsideCard>
           <AsideCard gridArea='1 / 2 / 2 / 3' height={'9'}>
-            <AsideCardContent></AsideCardContent>
+            {/* <AsideCardContent></AsideCardContent> */}
           </AsideCard>
         </AsideCardSeparator>
         <AsideCard gridArea='2 / 1 / 2 / 3'>

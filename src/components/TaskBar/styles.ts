@@ -21,7 +21,7 @@ export const Content = styled.div`
     max-width: 100%;
     height: 100%;
     padding: 0.25rem;
-    background-color: red;
+    /* background-color: red; */
     
     display: flex;    
     flex-flow: row wrap;
