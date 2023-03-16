@@ -24,7 +24,7 @@ export default createGlobalStyle`
     flex-flow: column;
     justify-content: flex-end;    
 
-    background-image: var(--fiveth-background-image);
+    background-image: var(--primary-background-image);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

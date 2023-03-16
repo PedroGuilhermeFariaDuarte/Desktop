@@ -21,7 +21,7 @@ import { Container, ActionContent, InfoContent, WindowsLogo, SearchIcon, IconTas
 
 
 const TaskBar: React.FC<ITaskBar> = () => {
-  const { state, dispatch } = useHooksContextReducer()
+  const { state, dispatch } = useHooksContextReducer()  
 
   return (
     <Container>

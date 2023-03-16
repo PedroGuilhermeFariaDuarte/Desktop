@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     width: 100vw;
-    height: 60px;
+    height: 2.875rem;
     backdrop-filter: var(--primary-acrylic-level);
-    background-color: var(--sixthly-background-acrylic-color);
+    background-color: var(--secondary-background-acrylic-color);
     box-shadow: var(--fourth-shadow);
     position: relative;
     z-index: 1000;
@@ -14,15 +14,15 @@ export const Container = styled.div`
     align-items: center;
 `
 export const ActionContent = styled.div`
-    width: 30%;
+    flex: 1;
     height: 100%;
     padding: var(--secondary-padding);
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+    background-color: red;
+    
     display: flex;    
-    flex-flow: row nowrap;    
-    align-items: center;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
 `
 export const InfoContent = styled.div`
     min-width: 11%;
