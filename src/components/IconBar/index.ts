@@ -9,6 +9,7 @@ export const IconBar = styled.button.attrs({
 }) <IIconBarProps>`
     flex:1;
     max-width: ${(props) => props.maxWidth ? props.maxWidth : '2.30rem'};
+    min-height: 100%;
     max-height: 100%;
     border-radius: 4px;   
     padding: 0.399rem; 
@@ -18,7 +19,7 @@ export const IconBar = styled.button.attrs({
 
     display: flex;    
     flex-flow: row wrap;    
-    justify-content: center;    
+    justify-content: flex-start;    
     align-items: center;
 
     &:hover {
