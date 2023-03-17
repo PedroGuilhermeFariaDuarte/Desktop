@@ -30,13 +30,18 @@ import { IconBar, IconContent } from '../IconBar'
 
 // Styles
 import {
-  Container, Content, Header, RowContainer, RowContent, RowHeader, RowIconWrapper, Footer, RowIconHeader, GroupItemsContainer, GroupItemsContent, RowFooter, RowScrollController, DotPageContainer, DotPage
+  Container, Content, Header, RowContainer, RowContent, RowHeader, RowIconWrapper, Footer, RowIconHeader, GroupItemsContainer, GroupItemsContent, RowFooter, RowScrollController, DotPageContainer, DotPage, GroupItemsScrollable
 } from './styles'
 
 const Menu: React.FC<IMenu> = () => {
-  const [fixedMatriz, setFixedMatriz] = useState<Array<Array<IFixedRowItem>>>([]);
+  const [fixedMatriz, setFixedMatriz] = useState<Array<Array<IFixedRowItem>>>([]);  
+  const [pageInFocus, setPageInFocus] = useState(0)
   const { state } = useHooksContextReducer()
 
+  // AUX Variables
+  const isFirstPage = pageInFocus === 0 && true
+  const isLastPage = fixedMatriz.length > 1 && fixedMatriz.length - 1 === pageInFocus && true
+    
   useEffect(() => {
     const groupOne = [
       {
@@ -116,12 +121,69 @@ const Menu: React.FC<IMenu> = () => {
         name: 'B. de Notas'
       },
     ]
+    const groupTwo = [
+      {
+        id: new Date().getTime(),
+        icon: MicrosoftEdgeIcon,
+        name: 'Edge 2'
+      },
+      {
+        id: new Date().getTime(),
+        icon: OfficeIcon,
+        name: 'Office 2'
+      },
+      {
+        id: new Date().getTime(),
+        icon: LinkedinIcon,
+        name: 'Linkedin 2'
+      },      
+    ]
 
     setFixedMatriz([
-      groupOne
+      groupOne,
+      groupTwo
     ])
     return () => setFixedMatriz([])
   }, [])
+
+  useEffect(() => {
+    try {      
+      if (pageInFocus <= -1) throw new Error(`The actual page is invalid`)
+
+      const groupItemsScrollableElement = document.querySelector(`#group-items-scrollable`) as HTMLDivElement
+      const groupItemsElement = document.querySelector(`#group-items-container-${pageInFocus}`) as HTMLDivElement
+
+      if (!groupItemsElement || !groupItemsScrollableElement) throw new Error(`The group items ${pageInFocus} not exits`)
+
+      if (pageInFocus === 0) {
+        groupItemsScrollableElement.scrollTo({
+          top:0
+        })
+      }else{
+        const actualPositionGroupItemsElement = groupItemsElement.offsetTop          
+  
+        groupItemsScrollableElement.scrollTo({
+          top: actualPositionGroupItemsElement
+        })
+      }
+
+    } catch (error) {
+      console.log(`Menu@useEffect ~ error`, error)
+    }
+  
+  }, [pageInFocus])
+
+  console.log(pageInFocus, isFirstPage, isLastPage, fixedMatriz.length)
+
+  function handleSetNewPage(indentifiyPage = -1){
+    try {
+      if (indentifiyPage <= -1 || (fixedMatriz.length > 1 && indentifiyPage > fixedMatriz.length)) return
+
+      setPageInFocus(indentifiyPage)
+    } catch (error) {
+      console.log('Menu@Component ~ error', error)
+    }
+  }
 
   return (
     <Container opened={state.open}>
@@ -140,45 +202,51 @@ const Menu: React.FC<IMenu> = () => {
             {
               fixedMatriz.length <= 0 ? 'Adicione um aplicativo para aparecer aqui...' : ''
             }
-            {
-              fixedMatriz.map((group, index) => {
-                return (
-                  <GroupItemsContainer key={index}>
-                    <GroupItemsContent>
-                      {
-                        group.map((item, index) => (
-                          <IconBar key={item.id + '' + index} className="icon-bar icons-main-menu-first-row-content">
-                            <IconContent>
-                              <RowIconWrapper>
-                                {
-                                  item?.wrapperImage ? (
-                                    <div className={item.wrapperImage}>
-                                      <img src={item.icon} alt="" />
-                                    </div>
-                                  ) : <img src={item.icon} alt="" />
-                                }
-                                <span>{item.name}</span>
-                              </RowIconWrapper>
-                            </IconContent>
-                          </IconBar>
-                        ))
-                      }
-                    </GroupItemsContent>
-                  </GroupItemsContainer>
-                )
-              })
-            }
+            <GroupItemsScrollable>
+              {
+                fixedMatriz.map((group, index) => {
+                  return (
+                    <GroupItemsContainer key={index} id={`group-items-container-${index}`}>
+                      <GroupItemsContent id={`group-items-content-${index}`}>
+                        {
+                          group.map((item, index) => (
+                            <IconBar key={item.id + '' + index} className="icon-bar icons-main-menu-first-row-content">
+                              <IconContent>
+                                <RowIconWrapper>
+                                  {
+                                    item?.wrapperImage ? (
+                                      <div className={item.wrapperImage}>
+                                        <img src={item.icon} alt="" />
+                                      </div>
+                                    ) : <img src={item.icon} alt="" />
+                                  }
+                                  <span>{item.name}</span>
+                                </RowIconWrapper>
+                              </IconContent>
+                            </IconBar>
+                          ))
+                        }
+                      </GroupItemsContent>
+                    </GroupItemsContainer>
+                  )
+                })
+              }
+            </GroupItemsScrollable>
 
             <RowFooter>
-              <RowScrollController isFirstPage={false} isLastPage={true} >
-                <span className="arrows" id="arrow-up" title='Pagina Anterior'>
+              <RowScrollController isFirstPage={isLastPage} isLastPage={isFirstPage}>
+                <span className="arrows" id="arrow-up" title='Pagina Anterior' onClick={() => handleSetNewPage(pageInFocus - 1)}>
                   <TiArrowSortedUp />
                 </span>
+
                 <DotPageContainer>
-                  <DotPage pageInFocus={false}/>
-                  <DotPage pageInFocus={true}/>
+                   {
+                    fixedMatriz.map((_group, index) => <DotPage onClick={() => handleSetNewPage(index)} key={index} pageInFocus={index === pageInFocus} />)
+                    // fixedMatriz.map((_group, index) => <DotPage  key={index} pageInFocus={index === pageInFocus} />)
+                   }                  
                 </DotPageContainer>
-                <span className="arrows" id="arrow-down" title='Próxima Página'>
+
+                <span className="arrows" id="arrow-down" title='Próxima Página' onClick={() => handleSetNewPage(pageInFocus + 1)}>
                   <TiArrowSortedDown />
                 </span>
               </RowScrollController>

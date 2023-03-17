@@ -195,7 +195,7 @@ export const RowScrollController = styled.div<IRowScrollControllerStyledProps>`
                 fill: #9d9d9d;
                 font-size: 0.9rem;
                 visibility: hidden;
-            }                       
+            }
 
             &:hover {
                 svg {
@@ -207,13 +207,19 @@ export const RowScrollController = styled.div<IRowScrollControllerStyledProps>`
 
         &#arrow-up { 
             svg {
-                ${props => props.isFirstPage ? css`visibility: visible;` : ''}        
+                ${props => props.isFirstPage ? css`
+                    visibility: visible;
+                ` : ''}
             }   
         }   
 
         &#arrow-down {
             svg {
-                ${props => props.isLastPage ? css`visibility: visible;` : ''}
+               
+                ${props => props.isLastPage ? css` 
+                    visibility: visible;` : '' 
+                }
+               
             }
         }   
     }            
@@ -250,9 +256,49 @@ export const DotPage = styled.span.attrs({
     }
 `
 
-export const GroupItemsContainer = styled.div`
+export const GroupItemsScrollable = styled.div.attrs({
+    id: 'group-items-scrollable'
+})`
     flex: 1;
     min-width: 98%;
+    height: 17.399375rem;    
+    /* background-color: paleturquoise; */
+
+    overflow-y: auto; 
+
+    display: flex;    
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.1rem;
+
+    ::-webkit-scrollbar-track {
+        border: none;
+        background: none;
+        background-color: none;
+    }
+
+    ::-webkit-scrollbar {
+        width: 4px;
+        height: 1px;
+        padding: 3px;
+        border-radius: 3px;    
+        /* background: #cccc; */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        width: 3px;
+        height: 3px;    
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #ddd;
+        visibility:hidden;
+    }
+
+`
+
+export const GroupItemsContainer = styled.div`
+    flex: 1;    
     height: auto;    
     /* background-color: pink; */
 
@@ -266,9 +312,7 @@ export const GroupItemsContainer = styled.div`
 export const GroupItemsContent = styled.ul`
     width: 100%;
     height: auto;    
-    /* background-color: orange; */
-
-    overflow-y: auto; 
+    /* background-color: orange; */    
 
     display: flex;    
     flex-flow: row wrap;
