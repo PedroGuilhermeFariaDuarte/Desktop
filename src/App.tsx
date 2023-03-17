@@ -3,6 +3,9 @@ import React from 'react';
 // Context
 import { ContextProvider } from './context'
 
+// Fonts
+import './styles/fonts/index.css'
+
 // Global Styles
 import GlobalStyle from './styles/global'
 

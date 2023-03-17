@@ -51,3 +51,215 @@ export const Container = styled.div`
         margin-right: 1rem;
     }
 `
+export const SearchableBox = styled.div`
+    width: 48.6875rem;
+    height: 45.687rem;
+    border-radius: 8px;
+    padding: 2rem 0rem 2rem 2rem;
+    backdrop-filter: var(--primary-acrylic-level);
+    background-color: var(--secondary-background-acrylic-color);
+
+    position: absolute;
+    top: calc(0px - (100vh - 45.687rem) - 32.687rem);
+    left: calc(100vw - 75.2vw);
+    font-size: 0.865rem;
+    color: var(--primary-text-color);
+
+    display: grid;
+    grid-template-columns: repeat(2, 45%, 1fr);
+    grid-gap: 0.5rem;
+`
+
+export const SearchableHeader = styled.header`
+    width: 100%;
+    height: 1rem;
+    /* background-color: blue; */
+
+    & span {
+        &.searchable-header-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+        }
+    }
+
+    font-weight: 600;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.7rem;
+`
+
+export const SearchableContent = styled.div`
+    &:first-child {
+        grid-area: 1 / 1 / 1 / 2;
+        padding: 0;
+    }
+
+    grid-area: 1 / 2 / 1 / 3;
+    min-width: 50%;
+    padding-right: 1.3rem;
+
+    /* background-color: red; */
+
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+
+    & .icon-bar {
+        width: 100%;
+        max-width: 100%;
+        min-height: 2rem;
+        height: 2rem;
+        max-height: 2rem;
+    }
+`
+
+export const SearchableList = styled.ul`
+    width: 100%;
+    height: 100%;
+
+    overflow-y: auto;
+
+    &:first-child {
+        margin: 0;
+    }
+
+    &.list-to-cards {    
+        flex-flow: row wrap;        
+    }
+
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;    
+
+    & .icon-bar {
+        width: 100%;
+        max-width: 100%;
+        min-height: 2.8rem;
+        height: 2.8rem;
+        max-height: 2.8rem;
+    }
+`
+
+export const SearchableItem = styled.li`
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.7rem;
+
+    font-size: 0.915rem;
+    font-weight: lighter;
+    cursor: pointer;
+
+    svg {
+        font-size: 1.3rem;
+    }
+`
+
+export const SearchableCard= styled.li`
+    flex: 1;
+    min-width: 30%;        
+    min-height: 10.562rem;    
+    height: 10.562rem;    
+    border-radius: 8px;    
+    background-color: var(--secondary-background-color);
+
+    &:first-child {
+        min-width: 100%;
+        height: 13.562rem;  
+        margin-top: 1rem;
+        order: 0;
+    }
+
+    // FIX A BUG WITH FLEX BOX, APPLY A TOP NEGATIVE TO UP BOX'S
+    margin-top: -12rem;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 0.7rem;
+
+    img { 
+        max-width: 100%;
+        height: 100%;
+        object-fit: contain;
+        
+        position: absolute;
+        z-index: 0;
+    }
+`
+
+export const SearchableCardFooter = styled.div`
+    flex: 1;    
+    width: 100%;    
+    height: 50%;     
+    max-height: 50%; 
+    padding: 1rem;        
+
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;    
+    gap: 0.7rem;   
+    
+    font-size: 0.915rem;
+    font-weight: lighter;
+    cursor: pointer;
+
+    &.has-background {
+        background-color: var(--primary-background-color);
+    }
+    
+    span {
+        color: var(--primary-text-color);
+
+        &.searchable-card-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--fourth-text-color);
+        }        
+    }
+`
+
+export const SearchableTagContainer = styled.div`
+    width: 100%;
+    height: auto;
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.7rem;  
+
+    span.taggable {
+        min-width: 4rem;
+        width: auto;
+        height: 1.8rem;
+        padding: 0.3rem;
+        border-radius: 2rem;
+        background: var(--primary-background-gradient);
+        font-size: 0.8rem;
+        display: flex;
+        flex-flow: row nowrap;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        gap: 0.7rem;  
+    }
+`
