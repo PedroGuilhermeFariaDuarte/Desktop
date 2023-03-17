@@ -5,15 +5,33 @@ import iconFlamingo from "../../assets/icons/flamingo.png"
 
 // Images
 import backgrounHackathon from "../../assets/background/hackathon.png"
+import backgrouTwitch from "../../assets/background/twitch.png"
 
 // Types
-import { ISearchableProps } from "./types";
+import { ILastedState, ISearchableProps } from "./types";
 
 // Styles
-import { Container, SearchableBox, SearchableCard, SearchableCardFooter, SearchableContent, SearchableHeader, SearchableItem, SearchableList, SearchableTagContainer  } from "./styles";
+import { Container, SearchableBox, SearchableCard, SearchableCardFooter, SearchableContent, SearchableFooter, SearchableHeader, SearchableItem, SearchableList, SearchableTagContainer  } from "./styles";
 import { IconBar, IconContent } from "../IconBar";
+import { useState } from "react"
 
 export function Searchable(_props: ISearchableProps) {
+    const [lasted, setLasted] = useState<Array<ILastedState>>([])
+
+    function handleOpenApplication(name: string = "", path:string = ""){
+        try {
+            if(path.trim() === '' || name.trim() ==='') return
+            
+            setLasted(lasteds => {
+                return [{ name, path }, ...lasteds.filter(lasted => lasted.name !== name)]
+            })
+
+            window.open(path)
+        } catch (error) {
+            console.log('Searchable@Component ~ error', error)
+        }
+    }
+    
     return <>
         <SearchableBox>
             <SearchableContent>
@@ -22,40 +40,19 @@ export function Searchable(_props: ISearchableProps) {
                 </SearchableHeader>
 
                 <SearchableList>
-                    <IconBar>
-                        <IconContent>
-                            <SearchableItem>
-                                <FcFolder />
-                                <span>Flumer</span>
-                            </SearchableItem>
-                        </IconContent>
-                    </IconBar>
-
-                    <IconBar>
-                        <IconContent>
-                            <SearchableItem>
-                                <FcFolder />
-                                <span>Todo</span>
-                            </SearchableItem>
-                        </IconContent>
-                    </IconBar>
-
-                    <IconBar>
-                        <IconContent>
-                            <SearchableItem>
-                                <FcFolder />
-                                <span>Hackathons</span>
-                            </SearchableItem>
-                        </IconContent>
-                    </IconBar>
-                    <IconBar>
-                        <IconContent>
-                            <SearchableItem>
-                                <FcFolder />
-                                <span>Ignite Feed</span>
-                            </SearchableItem>
-                        </IconContent>
-                    </IconBar>
+                    {
+                        lasted.length <= 0 ? 'Você ainda não visualizou nenhum app' : ''
+                    }
+                    {
+                        lasted.map((lasted) => <IconBar>
+                            <IconContent onClick={() => handleOpenApplication(lasted.name, lasted.path)}>
+                                <SearchableItem>
+                                    <FcFolder />
+                                    <span>{lasted.name}</span>
+                                </SearchableItem>
+                            </IconContent>
+                        </IconBar>)
+                    }                                       
                 </SearchableList>
 
             </SearchableContent>
@@ -65,7 +62,7 @@ export function Searchable(_props: ISearchableProps) {
                 </SearchableHeader>
                 
                 <SearchableList className="list-to-cards">
-                    <SearchableCard>                        
+                    <SearchableCard onClick={() => handleOpenApplication('Flumer', 'https://flumer.netlify.app/')}>
                         <SearchableCardFooter>
                             <span className="searchable-card-title">Flumer</span>
                             <SearchableTagContainer>
@@ -77,28 +74,47 @@ export function Searchable(_props: ISearchableProps) {
                         </SearchableCardFooter>
                     </SearchableCard>
 
-                    <SearchableCard>
+                    <SearchableCard onClick={() => handleOpenApplication('Todo', 'https://tuudo.netlify.app/')}>
                         <img src="https://tuudo.netlify.app/assets/main-logo-ba2446f9.svg" alt="" />
                         <SearchableCardFooter className="has-background">
                             <span>Todo, um app bem legal para suas tarefas</span>
                         </SearchableCardFooter>
                     </SearchableCard>
 
-                    <SearchableCard>
+                    <SearchableCard onClick={() => handleOpenApplication('Ignite Feed', 'https://whatsfeed.netlify.app/')}>
                         <img src="https://whatsfeed.netlify.app/assets/ignite-a7b6d80d.svg" alt="" />
                         <SearchableCardFooter className="has-background">                            
                             <span>Ignite Feed, um app de conclusão de modulo #ignite</span>
                         </SearchableCardFooter>
                     </SearchableCard>
 
-                    <SearchableCard>
+                    <SearchableCard onClick={() => handleOpenApplication('Hackatons', 'https://github.com/PedroGuilhermeFariaDuarte')}>
                         <img src={backgrounHackathon} alt="" />
                         <SearchableCardFooter className="has-background">
                             <span>Já participei de alguns Hackatons</span>
                         </SearchableCardFooter>
                     </SearchableCard>
+
+                    <SearchableCard onClick={() => handleOpenApplication('Hackatons', 'https://github.com/PedroGuilhermeFariaDuarte/ONEDEV')}>
+                        <img src={backgrouTwitch} alt="" />
+                        <SearchableCardFooter className="has-background">
+                            <span>Veja meu projeto para Twitch, tem muito app legal lá, tem um até com Chat e Notificação, tudo rodando em tempo real</span>
+                            <span>Em breve vou fazer o deploy... Eu prometo </span>
+                        </SearchableCardFooter>
+                    </SearchableCard>
                     
+                    <SearchableFooter>
+                        Legal, que você se interresou pela aplicação...
+
+                        <p>
+                            Essa aplicação faz parte do meu portfolio para demonstração das minhas habilidades e capacidades,
+                            estou disponível para novas oportunidades entre contato comigo, vou adorar te conhecer e saber mais sobre a proposta.                            
+                        </p>
+
+                        <span className="cursor-pointer" onClick={() => handleOpenApplication('Aee!! Obrigadoo', 'https://www.linkedin.com/in/pedrogfd/')}>Fico no aguardo 🎉</span>
+                    </SearchableFooter>
                 </SearchableList>
+
             </SearchableContent>
         </SearchableBox>
 

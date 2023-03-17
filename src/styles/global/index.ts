@@ -9,6 +9,10 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
   body, #root {
     width: 100%;
     height: 100vh;

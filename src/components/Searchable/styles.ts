@@ -99,10 +99,12 @@ export const SearchableContent = styled.div`
     }
 
     grid-area: 1 / 2 / 1 / 3;
+    overflow: hidden;
     /* min-width: 50%;
     width: 50%;
     max-width: 50%; */
 
+    padding-top: 0.4rem;
     padding-right: 1.3rem;
 
     /* background-color: red; */
@@ -125,6 +127,7 @@ export const SearchableContent = styled.div`
 export const SearchableList = styled.ul`
     width: 100%;
     height: 100%;
+    border-radius: 8px;
 
     overflow-y: auto;
 
@@ -173,8 +176,7 @@ export const SearchableItem = styled.li`
 export const SearchableCard= styled.li`
     flex: 1;
     min-width: 30%;        
-    min-height: 10.562rem;    
-    height: 10.562rem;    
+    height: 10.562rem;          
     border-radius: 8px;    
     background-color: var(--secondary-background-color);
 
@@ -189,8 +191,15 @@ export const SearchableCard= styled.li`
         background-position: center;        
     }
 
-    // FIX A BUG WITH FLEX BOX, APPLY A TOP NEGATIVE TO UP BOX'S
-    margin-top: -12rem;    
+    &:last-of-type {
+        min-height: 10.562rem;  
+        height: auto;
+
+        img {
+            max-width: 10%;
+            margin-top: 1rem;
+        }
+    }    
 
     position: relative;
     overflow: hidden;
@@ -227,9 +236,9 @@ export const SearchableCardFooter = styled.div`
     justify-content: flex-start;
     align-items: flex-start;    
     gap: 0.7rem;  
-    
+        
     z-index: 1;
-    
+        
     font-size: 0.915rem;
     font-weight: lighter;
     cursor: pointer;
@@ -274,5 +283,28 @@ export const SearchableTagContainer = styled.div`
         justify-content: center;        
         align-items: center;
         gap: 0.7rem;  
+    }
+`
+export const SearchableFooter = styled.footer`
+    width: 100%;
+    min-height: 30%;
+    height: auto;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: var( --secondary-background-color);   
+
+    font-size: 1rem;
+    font-weight: 500; 
+    word-wrap: break-word;    
+
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    gap: 0.5rem;        
+    align-items: flex-start;
+
+    p {
+        font-weight: 400;
+        text-align: justify;
     }
 `
