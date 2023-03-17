@@ -32,13 +32,15 @@ export const Content = styled.div`
 export const InfoContent = styled.div`
   flex: 1;    
   max-width: 15%;
-  height: 100%;
-  background-color: blue;
+  height: 100%;  
+  padding: 0.25rem;
+  /* background-color: blue; */
   
   display: flex;    
   flex-flow: row nowrap;    
+  justify-content: flex-end;
   align-items: center;
-  gap: 0.625rem;
+  gap: 0.3rem;
 
   &  svg {
     color: var(--fourth-text-color);
@@ -46,27 +48,21 @@ export const InfoContent = styled.div`
     cursor: pointer;
   }
 
-  & span {
-    height: 100%;
-    padding-left: 8px;
-    padding-right: 8px;
-
-    font-family: var(--secondary-font-family);
-    font-size: var(--primary-bodyTextMedium-size);
-    color: var(--fourth-text-color);
-    cursor: pointer;
-    
+  & #date-hour {
+    width: 100%;
+    height: auto;
+    /* background-color: red; */
+       
+    font-weight: lighter;
+    font-size: 0.83rem;   
+    color: var(--six-text-color); 
+    cursor: pointer;    
 
     display: flex;    
     flex-flow: column;    
-    align-items: flex-end;    
-    transition: 0.2s cubic-bezier(0.165,0.84,0.44,1);
-}
-
-& span:hover {
-  /* background-color: var(--secondary-background-acrylic-color); */
-  transition: 0.2s cubic-bezier(0.165,0.84,0.44,1);
-}
+    justify-content: center;
+    align-items: flex-end;        
+  }
 `
 export const SearchIcon = styled.div`
   svg {

@@ -7,10 +7,11 @@ import { useHooksContextReducer } from '../../context/reducer/hooks'
 import { actionReducerMenu, actionReducerWidgets } from '../../context/reducer/actions'
 
 // Icons
-import { IoIosArrowUp } from 'react-icons/io'
-import { AiOutlineSound } from 'react-icons/ai'
-import { BsBatteryFull } from 'react-icons/bs'
-import { MdSignalWifi4Bar } from 'react-icons/md'
+import { GiNetworkBars } from 'react-icons/gi'
+import { CiVolumeHigh } from 'react-icons/ci'
+import { BsKeyboard } from 'react-icons/bs'
+import { DiOnedrive } from 'react-icons/di'
+
 
 // Types
 import { ITaskBar } from './types'
@@ -41,15 +42,38 @@ const TaskBar: React.FC<ITaskBar> = () => {
         </IconBar>
         <Searchable />
       </Content>
-      <InfoContent>
-        <IoIosArrowUp />
-        <AiOutlineSound />
-        <BsBatteryFull />
-        <MdSignalWifi4Bar />
-        <span>
-          <span>15:50</span>
-          <span>28/06/2021</span>
-        </span>
+      <InfoContent>   
+        <IconBar className="icons-task-bar-info">
+          <IconContent>
+            <DiOnedrive />
+          </IconContent>
+        </IconBar>     
+        <IconBar className="icons-task-bar-info">
+          <IconContent>
+            <BsKeyboard />
+          </IconContent>
+        </IconBar>     
+        <IconBar className="icons-task-bar-info">
+          <IconContent>
+           <span className='text-info'>POR</span>
+           <br/>
+           <span className='text-info'>PTB2</span>
+          </IconContent>
+        </IconBar>     
+        <IconBar className="icons-task-bar-info">
+          <IconContent>
+            <GiNetworkBars />
+            <CiVolumeHigh />
+          </IconContent>
+        </IconBar>     
+        <IconBar className="icons-task-bar-info">
+          <IconContent>            
+            <span id="date-hour">
+              <span id="hour">15:50</span>
+              <span id="date">28/06/2021</span>
+            </span>            
+          </IconContent>
+        </IconBar>
       </InfoContent>
     </Container>
   )

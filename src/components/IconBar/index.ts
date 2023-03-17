@@ -57,6 +57,39 @@ export const IconBar = styled.button.attrs({
         
     }
 
+    &.icons-task-bar-info {
+        flex: none;
+        min-width: 1rem;
+        width: auto;
+        max-width: 6rem;
+
+        min-height: 100%;
+        height: 100%;
+        max-height: 100%;  
+        
+        justify-content: center;
+
+        svg {
+            font-size: 1.1rem;
+            fill: var(--six-text-color);
+
+            &:first-child {
+                margin: 0;
+            }
+
+            margin-left: 0.5rem;
+        }
+
+        .text-info {
+            font-size: 0.7rem;
+            color: var(--six-text-color);
+
+            &:first-child {
+                line-height: 1rem;
+            }
+        }
+    }
+
     &.icons-searchable-box-list {
         width: 100%;
         max-width: 100%;
@@ -71,7 +104,7 @@ export const IconBar = styled.button.attrs({
         }
     }
 
-     &.icons-main-menu-first-row-content , &.icons-main-menu-second-row-content {
+    &.icons-main-menu-first-row-content , &.icons-main-menu-second-row-content {
         &:hover {
             background-color: #fdfdfd;
         }  
