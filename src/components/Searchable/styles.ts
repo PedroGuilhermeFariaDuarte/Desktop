@@ -65,9 +65,9 @@ export const SearchableBox = styled.div.attrs({}) <ISearchableBoxProps>`
 
     transition: 0.2s cubic-bezier(0.165,0.84,0.44,1);
     position: absolute;
-    top: 45.687rem;
+    bottom: -45.687rem;
     
-    left: calc(100vw - 75.2vw);
+    left: calc((100vw - 50vw) - 24rem);
     font-size: 0.865rem;
     color: var(--primary-text-color);
 
@@ -75,7 +75,7 @@ export const SearchableBox = styled.div.attrs({}) <ISearchableBoxProps>`
     grid-template-columns: 33% 1fr;            
     grid-gap: 0.5rem;
 
-    ${props =>  props.opened ? css ` top: calc(0px - (100vh - 45.687rem) - 32.687rem); ` : ''}
+    ${props => props.opened ? css ` bottom:  3.875rem; ` : ''}
 `
 
 export const SearchableHeader = styled.header`

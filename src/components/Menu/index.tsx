@@ -21,6 +21,9 @@ import YoutubeIcon from '../../assets/icons/youtube.png'
 import ChromeIcon from '../../assets/icons/chrome.png'
 import FirefoxIcon from '../../assets/icons/firefox.png'
 import NotepadIcon from '../../assets/icons/notepad.png'
+import PictureIcon from '../../assets/icons/picture.png'
+import PaintIcon from '../../assets/icons/paint-palette.png'
+import GrooveIcon from '../../assets/icons/groove-music.png'
 
 // Types
 import { IFixedRowItem, IMenu } from './types'
@@ -30,7 +33,9 @@ import { IconBar, IconContent } from '../IconBar'
 
 // Styles
 import {
-  Container, Content, Header, RowContainer, RowContent, RowHeader, RowIconWrapper, Footer, RowIconHeader, GroupItemsContainer, GroupItemsContent, RowFooter, RowScrollController, DotPageContainer, DotPage, GroupItemsScrollable
+  Container, Content, Header, RowContainer, RowContent, RowHeader, RowIconWrapper, Footer, 
+  GroupItemsContainer, GroupItemsContent, RowFooter, RowScrollController, 
+  DotPageContainer, DotPage, GroupItemsScrollable
 } from './styles'
 
 const Menu: React.FC<IMenu> = () => {
@@ -124,18 +129,18 @@ const Menu: React.FC<IMenu> = () => {
     const groupTwo = [
       {
         id: new Date().getTime(),
-        icon: MicrosoftEdgeIcon,
-        name: 'Edge 2'
+        icon: PictureIcon,
+        name: 'Fotos'
       },
       {
         id: new Date().getTime(),
-        icon: OfficeIcon,
-        name: 'Office 2'
+        icon: PaintIcon,
+        name: 'Paint'
       },
       {
         id: new Date().getTime(),
-        icon: LinkedinIcon,
-        name: 'Linkedin 2'
+        icon: GrooveIcon,
+        name: 'Groove'
       },      
     ]
 
@@ -157,13 +162,15 @@ const Menu: React.FC<IMenu> = () => {
 
       if (pageInFocus === 0) {
         groupItemsScrollableElement.scrollTo({
-          top:0
+          top:0,
+          behavior: 'smooth' 
         })
       }else{
         const actualPositionGroupItemsElement = groupItemsElement.offsetTop          
   
         groupItemsScrollableElement.scrollTo({
-          top: actualPositionGroupItemsElement
+          top: actualPositionGroupItemsElement,
+          behavior: 'smooth' 
         })
       }
 
@@ -171,9 +178,7 @@ const Menu: React.FC<IMenu> = () => {
       console.log(`Menu@useEffect ~ error`, error)
     }
   
-  }, [pageInFocus])
-
-  console.log(pageInFocus, isFirstPage, isLastPage, fixedMatriz.length)
+  }, [pageInFocus])  
 
   function handleSetNewPage(indentifiyPage = -1){
     try {
@@ -241,8 +246,7 @@ const Menu: React.FC<IMenu> = () => {
 
                 <DotPageContainer>
                    {
-                    fixedMatriz.map((_group, index) => <DotPage onClick={() => handleSetNewPage(index)} key={index} pageInFocus={index === pageInFocus} />)
-                    // fixedMatriz.map((_group, index) => <DotPage  key={index} pageInFocus={index === pageInFocus} />)
+                    fixedMatriz.map((_group, index) => <DotPage onClick={() => handleSetNewPage(index)} key={index} pageInFocus={index === pageInFocus} />)                    
                    }                  
                 </DotPageContainer>
 
