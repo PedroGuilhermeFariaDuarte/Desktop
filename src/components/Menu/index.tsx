@@ -38,10 +38,10 @@ const Menu: React.FC<IMenu> = () => {
           <RowContent>
             <IconBar>
               <IconContent> 
-                <RowIconWrapper>
+                {/* <RowIconWrapper>
                   <MdEmail />
                   <span>Email</span>
-                </RowIconWrapper>
+                </RowIconWrapper> */}
               </IconContent>
             </IconBar>
 
@@ -94,10 +94,10 @@ const Menu: React.FC<IMenu> = () => {
           <RowContent>
             <IconBar>
               <IconContent> 
-                <RowIconWrapper>
+                {/* <RowIconWrapper>
                   <BsMicrosoftTeams />
                   <span>Microsoft Teams</span>
-                </RowIconWrapper>
+                </RowIconWrapper> */}
               </IconContent>
             </IconBar>
 

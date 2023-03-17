@@ -234,7 +234,7 @@ export const SearchableCard = styled.li`
 
     &:last-of-type {
         min-height: 10.562rem;  
-        height: auto;
+        height: auto;        
 
         img {
             max-width: 10%;
@@ -285,7 +285,7 @@ export const SearchableCardFooter = styled.div`
     cursor: pointer;
 
     &.has-background {
-        background-color: var(--primary-background-color);
+        background-color: #fff;
     }
     
     span {
@@ -333,7 +333,7 @@ export const SearchableFooter = styled.footer`
     height: auto;
     border-radius: 8px;
     padding: 1rem;
-    background-color: var( --secondary-background-color);   
+    background-color: #fff;
 
     font-size: 1rem;
     font-weight: 500; 

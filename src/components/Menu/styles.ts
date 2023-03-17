@@ -15,6 +15,8 @@ export const Container = styled.div<IMenyStyledProps>`
     
     transition: 0.2s cubic-bezier(0.165,0.84,0.44,1);
     margin-bottom: var(--primary-padding);
+    overflow: hidden;
+
     position: absolute;
     z-index: 0;
     bottom: -50rem;
