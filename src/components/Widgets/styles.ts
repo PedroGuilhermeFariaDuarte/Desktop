@@ -1,12 +1,13 @@
 import styled, {css} from "styled-components"
 import { IAsideCard } from "../TaskBar/types"
+import { IAsideProps } from "./types"
 
 export const AsideContainer = styled.div`
     position: relative;
     /* display: none; */
 `
 
-export const Aside = styled.aside`
+export const Aside = styled.aside<IAsideProps>`
     width: 48.313rem;
     height: calc((100vh -  2.875rem) - 1.5rem);
     padding: 2.7rem;
@@ -21,7 +22,7 @@ export const Aside = styled.aside`
     left: calc(0px - (48.313rem + 2.7rem));
     bottom: 1rem;
 
-    transition: all 0.22s cubic-bezier(0.39, 0.58, 0.57, 1) 0s;
+    transition: 0.2s cubic-bezier(0.165,0.84,0.44,1);
 
     display: flex;
     flex-flow: column;
@@ -29,9 +30,7 @@ export const Aside = styled.aside`
     align-items: flex-start;
     gap: 1rem;
 
-    &.aside-active {
-        left: 1rem;
-    }
+    ${props => props.opened ? css`left: 1rem;` : ''}    
 `
 
 export const AsideHeader = styled.header`

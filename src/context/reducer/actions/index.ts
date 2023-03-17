@@ -15,3 +15,12 @@ export function actionReducerWidgets(value: boolean) {
     }
   }
 }
+
+export function actionReducerSearch(value: boolean) {
+  return {
+    type: 'SEARCH',
+    payload: {
+      search: value
+    }
+  }
+}

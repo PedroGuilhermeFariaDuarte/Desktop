@@ -15,36 +15,29 @@ import { IconBar, IconContent } from '../IconBar'
 
 // Styles
 import { AsideHeader ,Aside, Container, AsideContent, AsideCard, AsideCardHeader, AsideCardContent, AsideCardSeparator, WidgetInfo } from './styles'
+import { actionReducerWidgets } from '../../context/reducer/actions'
 
 const Widgets: React.FC<IWidgets> = () => {
-  const { state } = useHooksContextReducer()  
+  const { state,dispatch } = useHooksContextReducer()  
 
-  function handleShowAsided(){
+  function handleOpenAside() {
     try {
-      const asideElement = document.querySelector("#aside-card");
-
-      if(!asideElement) return
-
-      if(asideElement.classList.contains("aside-active")) {
-        asideElement.classList.remove('aside-active')
-      }else{
-        asideElement.classList.add('aside-active')
-      }
+      dispatch(actionReducerWidgets(!state.widgets))
     } catch (error) {
-      console.log('Widgets@components ~ error', error)
+      console.log('Searchable@Component ~ error', error)
     }
   }
+
   return <>    
-    <Aside id="aside-card">
-      
+    <Aside opened={state.widgets}>      
       <AsideHeader>
         <div className='wrapper-icons'>
-          <IconBar maxWidth='2.3rem' onClick={handleShowAsided}>
+          <IconBar maxWidth='2.3rem'>
             <IconContent>
               <HiHome />
             </IconContent>
           </IconBar>
-          <IconBar maxWidth='2.3rem' onClick={handleShowAsided}>
+          <IconBar maxWidth='2.3rem'>
             <IconContent>
               <CgPlayButtonR />
             </IconContent>
@@ -68,12 +61,8 @@ const Widgets: React.FC<IWidgets> = () => {
           <AsideCardContent></AsideCardContent>
         </AsideCard>
         <AsideCardSeparator>
-          <AsideCard gridArea='1 / 2 / 1 / 3' height={'9'}>
-            {/* <AsideCardContent></AsideCardContent> */}
-          </AsideCard>
-          <AsideCard gridArea='1 / 2 / 2 / 3' height={'9'}>
-            {/* <AsideCardContent></AsideCardContent> */}
-          </AsideCard>
+          <AsideCard gridArea='1 / 2 / 1 / 3' height={'9'} />
+          <AsideCard gridArea='1 / 2 / 2 / 3' height={'9'} />
         </AsideCardSeparator>
         <AsideCard gridArea='2 / 1 / 2 / 3'>
           <AsideCardHeader></AsideCardHeader>
@@ -90,8 +79,8 @@ const Widgets: React.FC<IWidgets> = () => {
       </AsideContent>
     </Aside>    
 
-    <Container>
-      <IconBar maxWidth='12rem' onClick={handleShowAsided}>
+    <Container onClick={handleOpenAside}>
+      <IconBar maxWidth='12rem'>
         <IconContent>
             <WidgetInfo>
               <span className="icon-weather"></span>

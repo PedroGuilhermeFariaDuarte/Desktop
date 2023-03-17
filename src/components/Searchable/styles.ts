@@ -1,4 +1,7 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+// Types
+import { ISearchableBoxProps } from "./types";
 
 export const Container = styled.div`
     width: 13.75rem;
@@ -51,16 +54,18 @@ export const Container = styled.div`
         margin-right: 1rem;
     }
 `
-export const SearchableBox = styled.div`
+export const SearchableBox = styled.div.attrs({}) <ISearchableBoxProps>`
     width: 48.6875rem;
     height: 45.687rem;
     border-radius: 8px;
-    padding: 2rem 0rem 2rem 2rem;
+    padding: 2rem 0rem 0rem 2rem;
     backdrop-filter: var(--primary-acrylic-level);
     background-color: var(--secondary-background-acrylic-color);
 
+    transition: 0.2s cubic-bezier(0.165,0.84,0.44,1);
     position: absolute;
-    top: calc(0px - (100vh - 45.687rem) - 32.687rem);
+    top: 45.687rem;
+    
     left: calc(100vw - 75.2vw);
     font-size: 0.865rem;
     color: var(--primary-text-color);
@@ -68,6 +73,8 @@ export const SearchableBox = styled.div`
     display: grid;
     grid-template-columns: 33% 1fr;            
     grid-gap: 0.5rem;
+
+    ${props =>  props.opened ? css ` top: calc(0px - (100vh - 45.687rem) - 32.687rem); ` : ''}
 `
 
 export const SearchableHeader = styled.header`
@@ -128,6 +135,10 @@ export const SearchableList = styled.ul`
     width: 100%;
     height: 100%;
     border-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-bottom: 5rem;
+    padding-right: 0.5rem;
 
     overflow-y: auto;
 
@@ -173,7 +184,7 @@ export const SearchableItem = styled.li`
     }
 `
 
-export const SearchableCard= styled.li`
+export const SearchableCard = styled.li`
     flex: 1;
     min-width: 30%;        
     height: 10.562rem;          

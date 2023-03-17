@@ -1,3 +1,6 @@
+// Context
+import { useHooksContextReducer} from "../../context/reducer/hooks";
+
 // Icons
 import { BsSearch } from "react-icons/bs"
 import { FcFolder } from "react-icons/fc"
@@ -14,10 +17,21 @@ import { ILastedState, ISearchableProps } from "./types";
 import { Container, SearchableBox, SearchableCard, SearchableCardFooter, SearchableContent, SearchableFooter, SearchableHeader, SearchableItem, SearchableList, SearchableTagContainer  } from "./styles";
 import { IconBar, IconContent } from "../IconBar";
 import { useState } from "react"
+import { actionReducerSearch } from "../../context/reducer/actions";
 
 export function Searchable(_props: ISearchableProps) {
     const [lasted, setLasted] = useState<Array<ILastedState>>([])
+    const {state, dispatch} = useHooksContextReducer()
 
+    
+    function handleOpenSearchBox(){
+        try {
+            dispatch(actionReducerSearch(!state.search))
+        } catch (error) {
+            console.log('Searchable@Component ~ error', error)
+        }
+    }
+    
     function handleOpenApplication(name: string = "", path:string = ""){
         try {
             if(path.trim() === '' || name.trim() ==='') return
@@ -31,9 +45,9 @@ export function Searchable(_props: ISearchableProps) {
             console.log('Searchable@Component ~ error', error)
         }
     }
-    
+
     return <>
-        <SearchableBox>
+        <SearchableBox opened={state.search}>
             <SearchableContent>
                 <SearchableHeader>
                     <span>Recentes</span>
@@ -41,7 +55,7 @@ export function Searchable(_props: ISearchableProps) {
 
                 <SearchableList>
                     {
-                        lasted.length <= 0 ? 'Você ainda não visualizou nenhum app' : ''
+                        lasted.length <= 0 ? 'Você ainda não visualizou nenhum app..' : ''
                     }
                     {
                         lasted.map((lasted) => <IconBar>
@@ -120,7 +134,7 @@ export function Searchable(_props: ISearchableProps) {
 
         <Container>
             <BsSearch></BsSearch>
-            <input type="text" placeholder="Pesquisar"/>
+            <input type="text" placeholder="Pesquisar" onClick={handleOpenSearchBox}/>
             <img src={iconFlamingo} alt=""/>
         </Container>
     </>

@@ -18,65 +18,15 @@ import { InputContainer } from '../Input'
 
 // Styles
 import {
-  MenuContainer, UserAppsContainer,
-  UserAppsHeader, UserAppContent, UserAppsTitle, UserAppPin,
-  IconTaskBarContainer, IconTaskBarContent, IconMenu, UserActions
+  Container
 } from './styles'
 
 const Menu: React.FC<IMenu> = () => {
   const { state } = useHooksContextReducer()
 
   return (
-    <MenuContainer
-      className={state?.open === false ? 'action-menu' : ''}
-    >
-      <InputContainer
-        borderShowed={true}
-      >
-        <BiSearch />
-        <input type='search' placeholder='Type here to search' />
-      </InputContainer>
-      <UserAppsContainer>
-        <UserAppsHeader>
-          <UserAppsTitle>Pinned</UserAppsTitle>
-          <UserAppPin>
-            All apps
-            <IoIosArrowForward />
-          </UserAppPin>
-        </UserAppsHeader>
-        <UserAppContent>
-          <IconTaskBarContainer>
-            <IconTaskBarContent>
-              <IconMenu>
-                <DiAndroid />
-                ONEDEV
-              </IconMenu>
-            </IconTaskBarContent>
-
-            <IconTaskBarContent>
-              <IconMenu>
-                <SiFlutter />
-                ONEDEV:\\E
-              </IconMenu>
-            </IconTaskBarContent>
-          </IconTaskBarContainer>
-        </UserAppContent>
-      </UserAppsContainer>
-      <UserAppsContainer>
-        <UserAppsHeader>
-          <UserAppsTitle>Recommend</UserAppsTitle>
-          <UserAppPin>
-            More
-            <IoIosArrowForward />
-          </UserAppPin>
-        </UserAppsHeader>
-        <UserAppContent />
-      </UserAppsContainer>
-      <UserActions>
-        <h1>ONEDEV</h1>
-        <MdPowerSettingsNew />
-      </UserActions>
-    </MenuContainer>
+    <Container opened={state.open}>      
+    </Container>
   )
 }
 
