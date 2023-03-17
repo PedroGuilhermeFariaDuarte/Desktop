@@ -98,7 +98,7 @@ export function Searchable(_props: ISearchableProps) {
                     <SearchableCard onClick={() => handleOpenApplication('Ignite Feed', 'https://whatsfeed.netlify.app/')}>
                         <img src="https://whatsfeed.netlify.app/assets/ignite-a7b6d80d.svg" alt="" />
                         <SearchableCardFooter className="has-background">                            
-                            <span>Ignite Feed, um app de conclusão de modulo #ignite</span>
+                            <span>Ignite Feed, um app de conclusão no Ignite</span>
                         </SearchableCardFooter>
                     </SearchableCard>
 

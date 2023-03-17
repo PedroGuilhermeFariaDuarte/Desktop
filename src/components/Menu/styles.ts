@@ -163,8 +163,8 @@ export const RowContainer = styled.div`
     }
 
     .icon-bar {
-        background-color: #fdfdfd;
         &:hover {
+            background-color: #fdfdfd;
         }
     }
 `
@@ -214,8 +214,24 @@ export const RowIconWrapper = styled.div.attrs({
         fill: var(--cinco-background-color);
     }
 
+    img {
+        max-width: 50%;
+        height: auto;
+    }
+
     span {
         font-size: 0.8rem;
+    }
+
+    .icon-xbox {
+        width: 2.2rem;
+        height: 2.2rem;
+        padding: 0.3rem;
+        background-color: green;
+
+        img {
+            max-width: 100%;
+        }
     }
 `
 

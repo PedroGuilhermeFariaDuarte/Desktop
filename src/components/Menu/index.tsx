@@ -6,7 +6,11 @@ import { useHooksContextReducer } from '../../context/reducer/hooks'
 // Icons
 import { BiSearch } from 'react-icons/bi'
 import { MdEmail } from 'react-icons/md'
-import { BsMicrosoftTeams } from 'react-icons/bs'
+import InstagramIcon from '../../assets/icons/instagram.png'
+import LinkedinIcon from '../../assets/icons/linkedin.png'
+import MicrosoftEdgeIcon from '../../assets/icons/microsoft.png'
+import OfficeIcon from '../../assets/icons/office.png'
+import XboxIcon from '../../assets/icons/xbox.png'
 
 // Types
 import { IMenu } from './types'
@@ -38,27 +42,49 @@ const Menu: React.FC<IMenu> = () => {
           <RowContent>
             <IconBar>
               <IconContent> 
-                {/* <RowIconWrapper>
-                  <MdEmail />
-                  <span>Email</span>
-                </RowIconWrapper> */}
+                <RowIconWrapper>
+                  <img src={MicrosoftEdgeIcon} alt="" />
+                  <span>Edge</span>
+                </RowIconWrapper>
               </IconContent>
             </IconBar>
 
             <IconBar>
-              <IconContent />
+              <IconContent>
+                <RowIconWrapper>
+                  <img src={OfficeIcon} alt="" />
+                  <span>Office</span>
+                </RowIconWrapper>
+              </IconContent>
             </IconBar>
 
             <IconBar>
-              <IconContent />
+              <IconContent>
+                <RowIconWrapper>
+                  <img src={LinkedinIcon} alt="" />
+                  <span>Linkedin</span>
+                </RowIconWrapper>
+              </IconContent>
             </IconBar>
 
             <IconBar>
-              <IconContent />
+              <IconContent>
+                <RowIconWrapper>
+                  <img src={InstagramIcon} alt="" />
+                  <span>Instagram</span>
+                </RowIconWrapper>
+              </IconContent>
             </IconBar>
 
             <IconBar>
-              <IconContent />
+              <IconContent>
+                <RowIconWrapper>
+                  <span className='icon-xbox'>
+                    <img src={XboxIcon} alt="" />
+                  </span>
+                  <span>Xbox</span>
+                </RowIconWrapper>
+              </IconContent>
             </IconBar>
 
             <IconBar>
