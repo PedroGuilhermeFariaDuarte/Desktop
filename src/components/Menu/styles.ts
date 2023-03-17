@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 // Types
-import { IMenyStyledProps } from './types'
+import { IDotPageContainerStyledProps, IDotPageStyledProps, IMenyStyledProps, IRowScrollControllerStyledProps } from './types'
 
 export const Container = styled.div<IMenyStyledProps>`
     width: 40rem;
@@ -75,7 +75,7 @@ export const Header = styled.header`
 export const Content = styled.div`
     flex: 1;
     width: 100%;    
-    padding: 0 3.375rem 0 3.375rem;
+    padding: 0 0.7rem 0 3.375rem;
     /* background-color: red; */
 
     display: flex;
@@ -140,6 +140,7 @@ export const RowContainer = styled.div`
 export const RowHeader = styled.div`
     width: 100%;
     height: auto;    
+    padding: 0 3.375rem 0 0rem;
     /* background-color: blue; */
 
     font-size: 0.9rem;
@@ -157,16 +158,115 @@ export const RowContent = styled.div`
     /* background-color: yellow; */
 
     display: flex;    
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 0rem;    
 `
 
-export const RowGroupItemsContainer = styled.ul`
+export const RowFooter = styled.div`
+    flex: 1;
+    max-width: 2%;
+    height: 100%;    
+    /* background-color: tomato;     */
+
+    display: flex;    
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+`
+
+export const RowScrollController = styled.div<IRowScrollControllerStyledProps>`
     width: 100%;
+    height: auto;
+    /* background-color: aliceblue; */
+
+    display: flex;    
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+
+    .arrows {
+        
+        &#arrow-down , &#arrow-up  {
+            svg {
+                fill: #9d9d9d;
+                font-size: 0.9rem;
+                visibility: hidden;
+            }                       
+
+            &:hover {
+                svg {
+                    fill: #858585;
+                    font-size: 1.011rem;
+                }
+            }
+        }
+
+        &#arrow-up { 
+            svg {
+                ${props => props.isFirstPage ? css`visibility: visible;` : ''}        
+            }   
+        }   
+
+        &#arrow-down {
+            svg {
+                ${props => props.isLastPage ? css`visibility: visible;` : ''}
+            }
+        }   
+    }            
+`
+
+export const DotPageContainer = styled.div<IDotPageContainerStyledProps>`
+    width: 100%;
+    height: auto;
+    /* background-color: darkkhaki; */
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;       
+`
+
+export const DotPage = styled.span.attrs({
+    className: 'dot-page'
+}) <IDotPageStyledProps>` 
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 50%;
+    background-color: #9d9d9d;
+
+    ${props => (props.pageInFocus) ? css` 
+        transform: scale(1.2);
+        background-color: #858585;` :
+    ''}
+
+    &:hover {
+        transform: scale(1.2);
+        background-color: #858585;
+    }
+`
+
+export const GroupItemsContainer = styled.div`
+    flex: 1;
+    min-width: 98%;
     height: auto;    
     /* background-color: pink; */
+
+    display: flex;    
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0rem;    
+`
+
+export const GroupItemsContent = styled.ul`
+    width: 100%;
+    height: auto;    
+    /* background-color: orange; */
 
     overflow-y: auto; 
 

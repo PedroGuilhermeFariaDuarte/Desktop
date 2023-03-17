@@ -5,6 +5,7 @@ import { useHooksContextReducer } from '../../context/reducer/hooks'
 
 // Icons
 import { BiSearch } from 'react-icons/bi'
+import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti'
 import InstagramIcon from '../../assets/icons/instagram.png'
 import LinkedinIcon from '../../assets/icons/linkedin.png'
 import MicrosoftEdgeIcon from '../../assets/icons/microsoft.png'
@@ -29,7 +30,7 @@ import { IconBar, IconContent } from '../IconBar'
 
 // Styles
 import {
-  Container, Content, Header, RowContainer, RowContent, RowHeader, RowIconWrapper, Footer, RowIconHeader, RowGroupItemsContainer
+  Container, Content, Header, RowContainer, RowContent, RowHeader, RowIconWrapper, Footer, RowIconHeader, GroupItemsContainer, GroupItemsContent, RowFooter, RowScrollController, DotPageContainer, DotPage
 } from './styles'
 
 const Menu: React.FC<IMenu> = () => {
@@ -140,31 +141,48 @@ const Menu: React.FC<IMenu> = () => {
               fixedMatriz.length <= 0 ? 'Adicione um aplicativo para aparecer aqui...' : ''
             }
             {
-              fixedMatriz.map((matriz, index) => {
+              fixedMatriz.map((group, index) => {
                 return (
-                  <RowGroupItemsContainer key={index}>
-                    {
-                      matriz.map((item, index) => (
-                        <IconBar key={item.id + '' + index} className="icon-bar icons-main-menu-first-row-content">
-                          <IconContent>
-                            <RowIconWrapper>
-                              {
-                                item?.wrapperImage ? (
-                                  <div className={item.wrapperImage}>
-                                    <img src={item.icon} alt="" />
-                                  </div>
-                                ) : <img src={item.icon} alt="" />
-                              }
-                              <span>{item.name}</span>
-                            </RowIconWrapper>
-                          </IconContent>
-                        </IconBar>
-                      ))
-                    }
-                  </RowGroupItemsContainer>
+                  <GroupItemsContainer key={index}>
+                    <GroupItemsContent>
+                      {
+                        group.map((item, index) => (
+                          <IconBar key={item.id + '' + index} className="icon-bar icons-main-menu-first-row-content">
+                            <IconContent>
+                              <RowIconWrapper>
+                                {
+                                  item?.wrapperImage ? (
+                                    <div className={item.wrapperImage}>
+                                      <img src={item.icon} alt="" />
+                                    </div>
+                                  ) : <img src={item.icon} alt="" />
+                                }
+                                <span>{item.name}</span>
+                              </RowIconWrapper>
+                            </IconContent>
+                          </IconBar>
+                        ))
+                      }
+                    </GroupItemsContent>
+                  </GroupItemsContainer>
                 )
               })
             }
+
+            <RowFooter>
+              <RowScrollController isFirstPage={false} isLastPage={true} >
+                <span className="arrows" id="arrow-up" title='Pagina Anterior'>
+                  <TiArrowSortedUp />
+                </span>
+                <DotPageContainer>
+                  <DotPage pageInFocus={false}/>
+                  <DotPage pageInFocus={true}/>
+                </DotPageContainer>
+                <span className="arrows" id="arrow-down" title='Próxima Página'>
+                  <TiArrowSortedDown />
+                </span>
+              </RowScrollController>
+            </RowFooter>
             
           </RowContent>
         </RowContainer>

@@ -15,3 +15,15 @@ export interface IFixedRowItem {
   icon: string,
   wrapperImage?: string | undefined  
 }
+
+export interface IRowScrollControllerStyledProps {  
+  isLastPage: boolean
+  isFirstPage: boolean
+}
+
+export interface IDotPageContainerStyledProps {  
+}
+
+export interface IDotPageStyledProps {
+  pageInFocus: boolean  
+}
