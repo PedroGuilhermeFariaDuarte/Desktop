@@ -202,7 +202,7 @@ export const WidgetInfo = styled.div`
 
         & span {
             &:first-child {
-                font-size: 0.8rem;
+                font-size: 0.76rem;
                 font-weight: 500;
                 color: var(--primary-text-color);
             }
@@ -214,6 +214,18 @@ export const WidgetInfo = styled.div`
     }
 
     & .icon-weather {
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 0.9rem;
+            height: 0.9rem;
+            border-radius: 50%;
+            background: none;
+
+            position: absolute;
+            display: block;
+        }
         &::after {
             content: '';
             width: 1.2rem;

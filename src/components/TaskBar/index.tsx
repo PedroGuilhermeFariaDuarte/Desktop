@@ -22,6 +22,7 @@ import Widgets from '../Widgets'
 // Styles
 import { Container, Content, InfoContent } from './styles'
 import { WindowsIcon } from '../WindowIcon'
+import { Searchable } from '../Searchable'
 
 
 const TaskBar: React.FC<ITaskBar> = () => {
@@ -37,7 +38,8 @@ const TaskBar: React.FC<ITaskBar> = () => {
           <IconContent>
             <WindowsIcon />
           </IconContent>
-        </IconBar>        
+        </IconBar>
+        <Searchable />
       </Content>
       <InfoContent>
         <IoIosArrowUp />
