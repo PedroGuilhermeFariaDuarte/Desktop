@@ -66,7 +66,7 @@ export const SearchableBox = styled.div`
     color: var(--primary-text-color);
 
     display: grid;
-    grid-template-columns: repeat(2, 45%, 1fr);
+    grid-template-columns: 33% 1fr;            
     grid-gap: 0.5rem;
 `
 
@@ -99,7 +99,10 @@ export const SearchableContent = styled.div`
     }
 
     grid-area: 1 / 2 / 1 / 3;
-    min-width: 50%;
+    /* min-width: 50%;
+    width: 50%;
+    max-width: 50%; */
+
     padding-right: 1.3rem;
 
     /* background-color: red; */
@@ -180,10 +183,14 @@ export const SearchableCard= styled.li`
         height: 13.562rem;  
         margin-top: 1rem;
         order: 0;
+        background-image: url("https://flumer.netlify.app/assets/cover4-ab87c851.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;        
     }
 
     // FIX A BUG WITH FLEX BOX, APPLY A TOP NEGATIVE TO UP BOX'S
-    margin-top: -12rem;
+    margin-top: -12rem;    
 
     position: relative;
     overflow: hidden;
@@ -195,18 +202,22 @@ export const SearchableCard= styled.li`
     gap: 0.7rem;
 
     img { 
-        max-width: 100%;
+        max-width: 30%;
         height: 100%;
-        object-fit: contain;
-        
-        position: absolute;
-        z-index: 0;
+        object-fit: contain;            
+
+        margin: 0 auto;
+    }
+    
+    &:hover {
+        opacity: 0.9;
     }
 `
 
 export const SearchableCardFooter = styled.div`
     flex: 1;    
     width: 100%;    
+    min-height: 50%;     
     height: 50%;     
     max-height: 50%; 
     padding: 1rem;        
@@ -215,7 +226,9 @@ export const SearchableCardFooter = styled.div`
     flex-flow: column;
     justify-content: flex-start;
     align-items: flex-start;    
-    gap: 0.7rem;   
+    gap: 0.7rem;  
+    
+    z-index: 1;
     
     font-size: 0.915rem;
     font-weight: lighter;
@@ -251,14 +264,14 @@ export const SearchableTagContainer = styled.div`
         width: auto;
         height: 1.8rem;
         padding: 0.3rem;
-        border-radius: 2rem;
-        background: var(--primary-background-gradient);
-        font-size: 0.8rem;
+        border-radius: 2rem;        
+        background: var(--secondary-background-acrylic-color);
+
+        font-size: 0.8rem;        
+
         display: flex;
-        flex-flow: row nowrap;
-        -webkit-box-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
+        flex-flow: row nowrap;        
+        justify-content: center;        
         align-items: center;
         gap: 0.7rem;  
     }

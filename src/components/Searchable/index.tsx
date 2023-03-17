@@ -44,6 +44,14 @@ export function Searchable(_props: ISearchableProps) {
                         <IconContent>
                             <SearchableItem>
                                 <FcFolder />
+                                <span>Hackathons</span>
+                            </SearchableItem>
+                        </IconContent>
+                    </IconBar>
+                    <IconBar>
+                        <IconContent>
+                            <SearchableItem>
+                                <FcFolder />
                                 <span>Ignite Feed</span>
                             </SearchableItem>
                         </IconContent>
@@ -57,32 +65,36 @@ export function Searchable(_props: ISearchableProps) {
                 </SearchableHeader>
                 
                 <SearchableList className="list-to-cards">
-                    <SearchableCard>
+                    <SearchableCard>                        
                         <SearchableCardFooter>
                             <span className="searchable-card-title">Flumer</span>
                             <SearchableTagContainer>
                                 <span className="taggable">React.JS</span>
                                 <span className="taggable">Styled Components</span>
+                                <span className="taggable">Music</span>
+                                <span className="taggable">Concept</span>
                             </SearchableTagContainer>
                         </SearchableCardFooter>
                     </SearchableCard>
 
                     <SearchableCard>
+                        <img src="https://tuudo.netlify.app/assets/main-logo-ba2446f9.svg" alt="" />
                         <SearchableCardFooter className="has-background">
-                            <span>Todo</span>
+                            <span>Todo, um app bem legal para suas tarefas</span>
                         </SearchableCardFooter>
                     </SearchableCard>
 
                     <SearchableCard>
+                        <img src="https://whatsfeed.netlify.app/assets/ignite-a7b6d80d.svg" alt="" />
                         <SearchableCardFooter className="has-background">                            
-                            <span>Ignite Feed</span>
+                            <span>Ignite Feed, um app de conclusão de modulo #ignite</span>
                         </SearchableCardFooter>
                     </SearchableCard>
 
                     <SearchableCard>
                         <img src={backgrounHackathon} alt="" />
                         <SearchableCardFooter className="has-background">
-                            <span>Hackatons</span>
+                            <span>Já participei de alguns Hackatons</span>
                         </SearchableCardFooter>
                     </SearchableCard>
                     
