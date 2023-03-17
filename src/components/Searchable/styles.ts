@@ -57,10 +57,11 @@ export const Container = styled.div`
 export const SearchableBox = styled.div.attrs({}) <ISearchableBoxProps>`
     width: 48.6875rem;
     height: 45.687rem;
+    border: 0.1rem solid var(--secondary-border-color);
     border-radius: 8px;
     padding: 2rem 0rem 0rem 2rem;
-    backdrop-filter: var(--primary-acrylic-level);
-    background-color: var(--secondary-background-acrylic-color);
+    backdrop-filter: var(--secondary-acrylic-level);
+    background-color: var(--eight-background-acrylic-color);
 
     transition: 0.2s cubic-bezier(0.165,0.84,0.44,1);
     position: absolute;
@@ -162,7 +163,13 @@ export const SearchableList = styled.ul`
         min-height: 2.8rem;
         height: 2.8rem;
         max-height: 2.8rem;
-    }
+        border: 0.1rem solid transparent;  
+        
+        &:hover {
+            border: 0.1rem solid var(--third-border-color);  
+            background-color: #fdfdfd;
+        }
+    }    
 `
 
 export const SearchableItem = styled.li`
@@ -187,8 +194,9 @@ export const SearchableItem = styled.li`
 export const SearchableCard = styled.li`
     flex: 1;
     min-width: 30%;        
-    height: 10.562rem;          
-    border-radius: 8px;    
+    height: 10.562rem;
+    border: 0.1rem solid var(--third-border-color);     
+    border-radius: 8px;        
     background-color: var(--secondary-background-color);
 
     &:first-child {

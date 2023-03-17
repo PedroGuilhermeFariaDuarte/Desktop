@@ -24,7 +24,7 @@ export const IconBar = styled.button.attrs({
 
     &:hover {
       /* box-shadow: var(--secondary-shadow); */
-      background-color: var(--secondary-background-acrylic-color);
+      background-color: var(--nineth-background-acrylic-color);
       transition: 0.2s cubic-bezier(0.165,0.84,0.44,1);
     }
 

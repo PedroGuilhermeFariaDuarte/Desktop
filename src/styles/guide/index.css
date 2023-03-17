@@ -20,6 +20,8 @@
   --sixthly-background-acrylic-color: #48464420;
   --seventh-background-acrylic-color: #201f1e64;
   --eleventh-background-acrylic-color: #eff6fc23;
+  --eight-background-acrylic-color: #ffffffea;  
+  --nineth-background-acrylic-color: #f5f5f5ea;
 
   /*
     Acrylic levels
@@ -41,6 +43,8 @@
     Border colors
   */
   --primary-border-color: #0078d4;
+  --secondary-border-color: #8a8a8a;
+  --third-border-color: #e7e7e7;
 
   /*
     Background gradient colors
