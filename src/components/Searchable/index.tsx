@@ -58,7 +58,7 @@ export function Searchable(_props: ISearchableProps) {
                         lasted.length <= 0 ? 'Você ainda não visualizou nenhum app..' : ''
                     }
                     {
-                        lasted.map((lasted) => <IconBar>
+                        lasted.map((lasted) => <IconBar className="icons-searchable-box-list">
                             <IconContent onClick={() => handleOpenApplication(lasted.name, lasted.path)}>
                                 <SearchableItem>
                                     <FcFolder />

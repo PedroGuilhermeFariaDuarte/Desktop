@@ -57,6 +57,20 @@ export const IconBar = styled.button.attrs({
         
     }
 
+    &.icons-searchable-box-list {
+        width: 100%;
+        max-width: 100%;
+        min-height: 2.8rem;
+        height: 2.8rem;
+        max-height: 2.8rem;
+        border: 0.1rem solid transparent;  
+        
+        &:hover {
+            border: 0.1rem solid var(--third-border-color);  
+            background-color: #fdfdfd;
+        }
+    }
+
      &.icons-main-menu-first-row-content , &.icons-main-menu-second-row-content {
         &:hover {
             background-color: #fdfdfd;

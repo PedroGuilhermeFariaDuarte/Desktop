@@ -177,21 +177,7 @@ export const SearchableList = styled.ul`
     flex-flow: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 0.5rem;    
-
-    & .icon-bar {
-        width: 100%;
-        max-width: 100%;
-        min-height: 2.8rem;
-        height: 2.8rem;
-        max-height: 2.8rem;
-        border: 0.1rem solid transparent;  
-        
-        &:hover {
-            border: 0.1rem solid var(--third-border-color);  
-            background-color: #fdfdfd;
-        }
-    }    
+    gap: 0.5rem;
 `
 
 export const SearchableItem = styled.li`
