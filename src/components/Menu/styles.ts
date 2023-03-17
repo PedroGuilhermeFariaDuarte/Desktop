@@ -11,7 +11,7 @@ export const Container = styled.div<IMenyStyledProps>`
     backdrop-filter: var(--primary-acrylic-level);
     background-color: var(--eight-background-acrylic-color);
     box-shadow: var(--secondary-shadow);
-    padding: 2.375rem 3.375rem 2.375rem 3.375rem;
+    padding: 2.375rem 0rem 0rem 0rem;
     
     transition: 0.2s cubic-bezier(0.165,0.84,0.44,1);
     margin-bottom: var(--primary-padding);
@@ -30,6 +30,7 @@ export const Container = styled.div<IMenyStyledProps>`
 export const Header = styled.header`
     width: 100%;
     height: auto;
+    padding: 0 3.375rem 0 3.375rem;
     /* background-color: red; */
 
     display: flex;    
@@ -43,7 +44,7 @@ export const Header = styled.header`
         padding: 0.2rem 1rem 0.2rem 1rem;
         border: 0.1rem solid var(--third-border-color);   
         border-radius: 16px;
-        background-color: var(--primary-background-color);
+        background-color: #fff;
 
         display: flex;    
         flex-flow: row nowrap;
@@ -70,30 +71,35 @@ export const Header = styled.header`
 `
 
 export const Content = styled.div`
-    width: 100%;
-    height: 100%;    
+    flex: 1;
+    width: 100%;    
+    padding: 0 3.375rem 0 3.375rem;
     /* background-color: red; */
 
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(2, 50%);
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+    
     overflow: hidden;
 `
 
 export const RowContainer = styled.div`
+    flex: 1;
     width: 100%;
-    height: 100%;
+    min-height: 53%;
+    height: 53%;
+    max-height: 53%;
     padding: 0 2rem 0rem 2rem;
     /* padding: 0 3.375rem 0rem 3.375rem; */
-    /* background-color: green; */    
+    /* background-color: green;     */
 
     display: flex;    
     flex-flow: column;
-    gap: 1rem;
+    gap: 0.5rem;
 
     &:first-child{
         overflow-y: auto;
-        
+
         & .icon-bar {
             min-width: 5.1rem;
             width: 5.1rem;
@@ -105,9 +111,35 @@ export const RowContainer = styled.div`
 
             justify-content: center;
         }
+
+        ::-webkit-scrollbar-track {
+            border: none;
+            background: none;
+            background-color: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+            height: 1px;
+            padding: 3px;
+            border-radius: 3px;    
+            /* background: #cccc; */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            width: 3px;
+            height: 3px;    
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #ddd;
+        }
     }
 
     &:last-of-type{
+        min-height: auto;
+        height: auto;
+        max-height: auto;
+
         .icon-bar {
             min-width: 14rem;
             width: 14rem;
@@ -158,7 +190,7 @@ export const RowContent = styled.ul`
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    gap:  0.9rem;    
+    gap:  0.84rem;    
 `
 
 export const RowIconWrapper = styled.div.attrs({
@@ -183,4 +215,19 @@ export const RowIconWrapper = styled.div.attrs({
     span {
         font-size: 0.8rem;
     }
+`
+
+export const Footer = styled.footer`    
+    flex: 1;
+    width: 100%;   
+    min-height: 4.062rem; 
+    height: 4.062rem; 
+    max-height: 4.062rem; 
+    background-color: #D8E2F3;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 `

@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Context
 import { ContextProvider } from './context'
 
@@ -21,7 +19,7 @@ function App() {
   
   return (<>
     <GlobalStyle />
-    <ContextProvider>
+    <ContextProvider>      
       <Container>
         <Menu />        
       </Container>

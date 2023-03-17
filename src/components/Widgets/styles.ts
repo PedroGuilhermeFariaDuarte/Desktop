@@ -16,7 +16,7 @@ export const Aside = styled.aside<IAsideProps>`
     background-color: var(--primary-background-color);  
     
     overflow-y: auto;
-
+    
     position: absolute;
     top: calc(0px - ((100vh -  2.875rem) + -0.7rem));
     left: calc(0px - (48.313rem + 2.7rem));
@@ -93,6 +93,29 @@ export const AsideContent = styled.div`
     padding: 2.9rem;
 
     overflow-y: auto;
+
+    ::-webkit-scrollbar-track {
+        border: none;
+        background: none;
+        background-color: none;
+    }
+
+    ::-webkit-scrollbar {
+        width: 4px;
+        height: 1px;
+        padding: 3px;
+        border-radius: 3px;    
+        /* background: #cccc; */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        width: 3px;
+        height: 3px;    
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #ddd;
+    }
+
     
     display: grid;
     grid-template-columns: repeat(2, 1fr);
