@@ -88,10 +88,8 @@ export const Content = styled.div`
 export const RowContainer = styled.div`
     flex: 1;
     width: 100%;
-    min-height: 53%;
-    height: 53%;
-    max-height: 53%;
-    padding: 0 2rem 0rem 2rem;
+    height: auto;
+    padding: 0 0rem 0rem 2rem;
     /* padding: 0 3.375rem 0rem 3.375rem; */
     /* background-color: green;     */
 
@@ -100,20 +98,6 @@ export const RowContainer = styled.div`
     gap: 0.5rem;
 
     &:first-child{
-        overflow-y: auto;
-
-        & .icon-bar {
-            min-width: 5.1rem;
-            width: 5.1rem;
-            max-width: 5.1rem;
-
-            min-height: 5.1rem;
-            height: 5.1rem;
-            max-height: 5.1rem;
-
-            justify-content: center;
-        }
-
         ::-webkit-scrollbar-track {
             border: none;
             background: none;
@@ -140,17 +124,7 @@ export const RowContainer = styled.div`
     &:last-of-type{
         min-height: auto;
         height: auto;
-        max-height: auto;
-
-        .icon-bar {
-            min-width: 14rem;
-            width: 14rem;
-            max-width: 14rem;
-
-            min-height: 3.2rem;
-            height: 3.2rem;
-            max-height: 3.2rem;            
-        }
+        max-height: auto;        
 
         .row-icon-wrapper {
             flex-flow: row nowrap;
@@ -160,13 +134,7 @@ export const RowContainer = styled.div`
                 margin-top: 0.3rem;
             };
         }
-    }
-
-    .icon-bar {
-        &:hover {
-            background-color: #fdfdfd;
-        }
-    }
+    }    
 `
 
 export const RowHeader = styled.div`
@@ -183,16 +151,30 @@ export const RowHeader = styled.div`
     align-items: center;    
 `
 
-export const RowContent = styled.ul`
+export const RowContent = styled.div`
     width: 100%;
     height: auto;    
-    /* background-color: pink; */
+    /* background-color: yellow; */
 
     display: flex;    
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    gap:  0.84rem;    
+    gap: 0rem;    
+`
+
+export const RowGroupItemsContainer = styled.ul`
+    width: 100%;
+    height: auto;    
+    /* background-color: pink; */
+
+    overflow-y: auto; 
+
+    display: flex;    
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0rem;    
 `
 
 export const RowIconWrapper = styled.div.attrs({
@@ -207,7 +189,7 @@ export const RowIconWrapper = styled.div.attrs({
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.35rem;
 
     svg {
         font-size: 2.2rem;
@@ -215,7 +197,7 @@ export const RowIconWrapper = styled.div.attrs({
     }
 
     img {
-        max-width: 50%;
+        max-width: 42%;
         height: auto;
     }
 
@@ -233,6 +215,20 @@ export const RowIconWrapper = styled.div.attrs({
             max-width: 100%;
         }
     }
+`
+
+export const RowIconHeader = styled.div.attrs({
+    className: "row-icon-header"
+})`
+    flex: 1;
+    width: 100%;   
+    background-color: red;     
+
+    display: flex;    
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;    
 `
 
 export const Footer = styled.footer`    

@@ -8,3 +8,10 @@ export interface IMenu extends PropsWithChildren<any> {
 export interface IMenyStyledProps {
   opened: boolean
 }
+
+export interface IFixedRowItem {
+  id: number
+  name: string
+  icon: string,
+  wrapperImage?: string | undefined  
+}
