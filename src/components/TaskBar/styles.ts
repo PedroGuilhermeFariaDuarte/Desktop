@@ -5,7 +5,7 @@ export const Container = styled.nav`
     height: 2.875rem;
     padding-left: 1rem;
     backdrop-filter: var(--primary-acrylic-level);
-    background-color: var(--secondary-background-acrylic-color);
+    background-color: var(--eight-background-acrylic-color);    
     box-shadow: var(--fourth-shadow);
 
     position: relative;
@@ -46,22 +46,6 @@ export const InfoContent = styled.div`
     color: var(--fourth-text-color);
     margin-right: 0.625rem;
     cursor: pointer;
-  }
-
-  & #date-hour {
-    width: 100%;
-    height: auto;
-    /* background-color: red; */
-       
-    font-weight: lighter;
-    font-size: 0.83rem;   
-    color: var(--six-text-color); 
-    cursor: pointer;    
-
-    display: flex;    
-    flex-flow: column;    
-    justify-content: center;
-    align-items: flex-end;        
   }
 `
 export const SearchIcon = styled.div`

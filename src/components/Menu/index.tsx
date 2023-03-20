@@ -4,6 +4,7 @@ import React, { memo, useEffect, useState } from 'react'
 import { useHooksContextReducer } from '../../context/reducer/hooks'
 
 // Icons
+import { SiMicrosoftbing } from 'react-icons/si'
 import { BiSearch } from 'react-icons/bi'
 import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti'
 import InstagramIcon from '../../assets/icons/instagram.png'
@@ -24,6 +25,7 @@ import NotepadIcon from '../../assets/icons/notepad.png'
 import PictureIcon from '../../assets/icons/picture.png'
 import PaintIcon from '../../assets/icons/paint-palette.png'
 import GrooveIcon from '../../assets/icons/groove-music.png'
+import { RiArrowRightSLine } from 'react-icons/ri'
 
 // Types
 import { IFixedRowItem, IMenu } from './types'
@@ -35,7 +37,7 @@ import { IconBar, IconContent } from '../IconBar'
 import {
   Container, Content, Header, RowContainer, RowContent, RowHeader, RowIconWrapper, Footer, 
   GroupItemsContainer, GroupItemsContent, RowFooter, RowScrollController, 
-  DotPageContainer, DotPage, GroupItemsScrollable
+  DotPageContainer, DotPage, GroupItemsScrollable, LastedIconsText
 } from './styles'
 
 const Menu: React.FC<IMenu> = () => {
@@ -201,7 +203,13 @@ const Menu: React.FC<IMenu> = () => {
       <Content>
         <RowContainer>
           <RowHeader>
-            <span>Fixado</span>            
+            <span>Fixado</span>  
+            <IconBar className='icons-main-menu-header'>
+              <IconContent>
+                Todos os aplicativos
+                <RiArrowRightSLine />
+              </IconContent>
+            </IconBar>          
           </RowHeader>
           <RowContent>
             {
@@ -261,38 +269,31 @@ const Menu: React.FC<IMenu> = () => {
 
         <RowContainer>
           <RowHeader>
-            <span>Recomendações</span>            
+            <span>Recomendações</span>   
+            <IconBar className='icons-main-menu-header'>
+              <IconContent>
+                Mais
+                <RiArrowRightSLine />
+              </IconContent>
+            </IconBar>          
           </RowHeader>
           <RowContent>
-            <IconBar className='icons-main-menu-second-row-content'>
-              <IconContent> 
-                {/* <RowIconWrapper>
-                  <BsMicrosoftTeams />
-                  <span>Microsoft Teams</span>
-                </RowIconWrapper> */}
-              </IconContent>
-            </IconBar>
+            <GroupItemsContainer>
+              <GroupItemsContent>
+                <IconBar className='icons-main-menu-second-row-content'>
+                  <IconContent> 
+                    <RowIconWrapper>
+                      <SiMicrosoftbing />
+                      <LastedIconsText>
+                        <span>Bing</span> 
+                        <span>Adicionados recentemente</span>                      
+                      </LastedIconsText>
+                    </RowIconWrapper>
+                  </IconContent>
+                </IconBar>               
 
-            <IconBar className='icons-main-menu-second-row-content'>
-              <IconContent />
-            </IconBar>
-
-            <IconBar className='icons-main-menu-second-row-content'>
-              <IconContent />
-            </IconBar>
-
-            <IconBar className='icons-main-menu-second-row-content'>
-              <IconContent />
-            </IconBar>
-
-            <IconBar className='icons-main-menu-second-row-content'>
-              <IconContent />
-            </IconBar>
-
-            <IconBar className='icons-main-menu-second-row-content'>
-              <IconContent />
-            </IconBar>
-           
+              </GroupItemsContent>
+            </GroupItemsContainer>
           </RowContent>
         </RowContainer>
       </Content>    

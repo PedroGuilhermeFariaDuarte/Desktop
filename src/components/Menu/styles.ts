@@ -337,7 +337,7 @@ export const RowIconWrapper = styled.div.attrs({
 
     svg {
         font-size: 2.2rem;
-        fill: var(--cinco-background-color);
+        /* fill: var(--cinco-background-color); */
     }
 
     img {
@@ -359,6 +359,31 @@ export const RowIconWrapper = styled.div.attrs({
             max-width: 100%;
         }
     }
+
+    
+`
+export const LastedIconsText = styled.div.attrs({
+    className: "lasted-icons-text"
+})`
+    flex: 1;
+    min-width: 50%;
+    width: initial;
+    max-width: initial;
+
+    height: auto;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0rem;
+
+    span:last-of-type {
+        font-size: 0.78rem;
+        color: var(--six-text-color);
+    }
+
+
 `
 
 export const RowIconHeader = styled.div.attrs({
@@ -375,13 +400,13 @@ export const RowIconHeader = styled.div.attrs({
     gap: 0rem;    
 `
 
-export const Footer = styled.footer`    
+export const Footer = styled.footer`
     flex: 1;
     width: 100%;   
     min-height: 4.062rem; 
     height: 4.062rem; 
     max-height: 4.062rem; 
-    background-color: #D8E2F3;
+    background-color: #fbfbfb60;
 
     display: flex;
     flex-flow: row nowrap;

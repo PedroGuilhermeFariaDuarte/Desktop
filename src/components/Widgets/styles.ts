@@ -13,7 +13,7 @@ export const Aside = styled.aside<IAsideProps>`
     padding: 2.7rem;
     border-radius: 8px;    
     /* backdrop-filter: var(--secondary-acrylic-level); */
-    background-color: var(--primary-background-color);  
+    background-color: var(--primary-background-color);
     
     overflow-y: auto;
     
