@@ -34,5 +34,11 @@ export default createGlobalStyle`
     background-position: center;
     background-repeat: no-repeat;
   }
+
+  @media screen and (max-width: 764px) {
+    #warning {
+      display: flex;
+    }
+  }
 `
 
