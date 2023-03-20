@@ -88,7 +88,7 @@ export const IconBar = styled.button.attrs({
         justify-content: center;
     }
     
-    &.icons-main-menu-second-row-content {
+    &.icons-main-menu-second-row-content, &.icons-main-menu-footer {
         flex: 1;
         min-width: 50%;
         width: initial;
@@ -102,6 +102,37 @@ export const IconBar = styled.button.attrs({
             /* margin-left: 1rem; */
         }
         
+    }
+
+    &.icons-main-menu-footer {
+        #image-profile  {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            
+            overflow: hidden;
+            display: inline-block;
+
+            img {
+                max-width: 100%;
+            }
+            
+        }
+
+        .icon-content {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        &:last-of-type {
+            min-width: 10%;
+            max-width: 10%;
+        }            
+
+        justify-content: center;
     }
 
     &.icons-main-menu-header {
@@ -216,7 +247,7 @@ export const IconBar = styled.button.attrs({
         &:hover {
             background-color: #fdfdfd;
         }  
-     }
+    }
 `
 
 export const IconContent = styled.span.attrs({

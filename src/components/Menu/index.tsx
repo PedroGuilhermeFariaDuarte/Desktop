@@ -297,7 +297,21 @@ const Menu: React.FC<IMenu> = () => {
           </RowContent>
         </RowContainer>
       </Content>    
-      <Footer />
+      <Footer>
+        <IconBar className='icons-main-menu-footer'>
+          <IconContent> 
+            <span id="image-profile">
+              <img src="https://avatars.githubusercontent.com/u/16112395?v=4" alt=""/>
+            </span>           
+            <span>Pedro Guilherme Faria Duarte</span>                            
+          </IconContent>
+        </IconBar>  
+        <IconBar className='icons-main-menu-footer'>
+          <IconContent> 
+            🎉
+          </IconContent>
+        </IconBar>  
+      </Footer>
     </Container>
   )
 }

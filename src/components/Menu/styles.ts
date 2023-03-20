@@ -407,10 +407,11 @@ export const Footer = styled.footer`
     height: 4.062rem; 
     max-height: 4.062rem; 
     background-color: #fbfbfb60;
+    padding: 1rem 4rem 1rem 4rem;
 
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 1rem;
 `
